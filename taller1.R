@@ -21,4 +21,11 @@ titan<-rbind(train,testnew)
 head(titan)
 
 
+########################
+
+titan2<-rbind(train[,-2],test)
+head(titan2)
+
+
+
 
