@@ -41,5 +41,13 @@ titan2$Pclass<-factor(titan2$Pclass, levels= c("Superior","Medio","Inferior"),or
 summary(titan2)
 
 
+library(VIM)
+#DATOS PERDIDOS(La mayor parte e concentra en el centro)
+aggr(titan2, numbers=TRUE)
+?aggr
+
+#MAPA DE PERDIDA
+library(Amelia)
+missmap(titan2)
 
 
