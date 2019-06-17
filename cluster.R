@@ -39,7 +39,7 @@ play3d(spin3d(a), duration = 20)
 library(aplpack)
 faces(newiris[1:30,])
 
-#################
+###############
 #Numero de cluster´s necesarios
 valor<-numeric()
 for(k in 2:10){
@@ -49,7 +49,7 @@ for(k in 2:10){
 
 plot(2:10, valor, type = "b")
 
-##################
+################
 #Silueta
 irisscal<-daisy(scale(newiris))
 par(mfrow=c(1,3))
