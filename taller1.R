@@ -27,5 +27,19 @@ titan2<-rbind(train[,-2],test)
 head(titan2)
 
 
+#TRANSFORMAR DATA
+str(titan2)
+titan2$PassengerId<-as.factor(titan2$PassengerId)
+titan2$Pclass<-as.factor(titan2$Pclass)
+
+summary(titan2)
+#IFELSE
+titan2$Pclass<-ifelse(titan2$Pclass==1,"Superior",ifelse(titan2$Pclass==2,"Medio","Inferior"))
+titan2$Pclass<-as.factor(titan2$Pclass)
+#Solo agregar si los valores requieren order
+titan2$Pclass<-factor(titan2$Pclass, levels= c("Superior","Medio","Inferior"),ordered =TRUE)
+summary(titan2)
+
+
 
 
