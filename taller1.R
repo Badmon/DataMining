@@ -55,3 +55,8 @@ library(DMwR)
 titan2imp<-centralImputation(titan2)
 summary(titan2imp)
 
+#Imputación multivariante
+#K-Vecinos mas cercanos
+titan2kvec<-knnImputation(titan2)
+summary(titan2kvec)
+
