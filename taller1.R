@@ -50,4 +50,8 @@ aggr(titan2, numbers=TRUE)
 library(Amelia)
 missmap(titan2)
 
+#Imputación de datos
+library(DMwR)
+titan2imp<-centralImputation(titan2)
+summary(titan2imp)
 
