@@ -45,6 +45,22 @@ marginplot(banco[, c("duracion", "empleo")], cex.numbers = 1, pch =15)
 marginplot(banco[, c("Nueva_cuenta", "empleo")], cex.numbers = 1, pch =15)
 
 
+####################
+#HIPOTESIS CON MISSING Y SIN MISSSING
+banco1<-na.omit(banco)
+missingraf=aggr(banco1,numbers=T)
+
+#sacamos los missing
+mean(banco1$duracion)
+#Desviacion standar
+sd(banco1$duracion)
+
+#sacamos los NAs
+mean(banco$duracion , na.rm = T)
+#Desviacion  standar
+sd(banco$duracion , na.rm = T)
+
+
 #representación matricial missing
 matrixplot(banco)
 matrixplot(banco, interactive = TRUE)
