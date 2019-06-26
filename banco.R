@@ -114,6 +114,7 @@ head(bancomiss$ximp)
 
 
 #Metodos de regresión
-# IRMI
+#IRMI
 bancoirmi<- irmi(banco[,1:7])
 summary(bancoirmi)
+
