@@ -1,16 +1,29 @@
 #AVANCE DE PROYECTO FINAL
+
+
+#2
+# a) COMPRESIÓN DE LOS DATOS
+
 #CARGAMOS LA DATA
 juegosOlimpicos<-read.csv("C:/Users/user/Documents/DataMining/dataMineria.csv",sep=";")
-
-#2.- COMPRESIÓN DE LOS DATOS
-
-head(juegosOlimpicos)
 
 #id=Identificador de los jugadores
 #name=Nombre del jugador
 #nationality=Nacionalidad del jugador
 #sex=sexo del jugador
-#dob
+#dob= fecha de nacimiento
+#height=altura
+#weight=peso
+#sport=deporte
+#gol,silver,bronze=medallas
+
+# b)Exploración de los datos
+head(juegosOlimpicos)
+summary(juegosOlimpicos)
+str(juegosOlimpicos)
+
+# c)Verificación de calidad de datos
+str(juegosOlimpicos)
 
 #REDEFINIMOS LAS VARIABLES A UTILIZAR
 juegosOlimpicos<-juegosOlimpicos[,3:11]
@@ -36,11 +49,3 @@ porcentajeper
 #Verificamos las filas que tienen valores perdidos
 a<-which(rowSums(is.na(juegosOlimpicos))!=0)
 length(a)*100/dim(juegosOlimpicos)[1]
-
-
-
-
-
-
-
-
