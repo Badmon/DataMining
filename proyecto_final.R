@@ -1,7 +1,16 @@
 #AVANCE DE PROYECTO FINAL
-
 #CARGAMOS LA DATA
 juegosOlimpicos<-read.csv("C:/Users/user/Documents/DataMining/dataMineria.csv",sep=";")
+
+#2.- COMPRESIÓN DE LOS DATOS
+
+head(juegosOlimpicos)
+
+#id=Identificador de los jugadores
+#name=Nombre del jugador
+#nationality=Nacionalidad del jugador
+#sex=sexo del jugador
+#dob
 
 #REDEFINIMOS LAS VARIABLES A UTILIZAR
 juegosOlimpicos<-juegosOlimpicos[,3:11]
