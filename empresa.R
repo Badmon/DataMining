@@ -7,3 +7,6 @@ head(empresa)
 #En el conjunto de datos tenemos 3333 observaciones con 6 variables la variable principal es desafiliado
 str(empresa)
 
+#Relizamos un resumen de los datos
+summary(empresa)
+
