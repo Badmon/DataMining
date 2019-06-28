@@ -1,5 +1,6 @@
 #AVANCE DE PROYECTO FINAL
 
+getwd()
 
 #2
 # a) COMPRESIÓN DE LOS DATOS
@@ -22,7 +23,7 @@ head(juegosOlimpicos)
 summary(juegosOlimpicos)
 str(juegosOlimpicos)
 
-# c)Verificación de calidad de datos
+# c)Verificación de calidad de datosm4
 str(juegosOlimpicos)
 
 #REDEFINIMOS LAS VARIABLES A UTILIZAR
@@ -42,10 +43,26 @@ str(juegosOlimpicos)
 which(colSums(is.na(juegosOlimpicos))!=0)
 
 #Calculamos valores perdidos por columna
-colperd=c(4,5)
+colperd=c(6,7)
 porcentajeper=100*colSums(is.na(juegosOlimpicos[,colperd]))/dim(juegosOlimpicos)[1]
 porcentajeper
 
 #Verificamos las filas que tienen valores perdidos
 a<-which(rowSums(is.na(juegosOlimpicos))!=0)
 length(a)*100/dim(juegosOlimpicos)[1]
+
+
+
+######
+library(mice)
+library(VIM)
+
+missingraf=aggr(juegosOlimpicos,numbers=T)
+summary(missingraf)
+
+names(juegosOlimpicos)
+
+library(Amelia)
+missmap(juegosOlimpicos)
+
+
