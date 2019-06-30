@@ -1,0 +1,2 @@
+
+lico<-read.csv("C:/Users/user/Documents/DataMining/lico.csv",sep=",")

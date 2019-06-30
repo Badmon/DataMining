@@ -1,0 +1,9 @@
+{
+    "path" : "~/DataMining",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

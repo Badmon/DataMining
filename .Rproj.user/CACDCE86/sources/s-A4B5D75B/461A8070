@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1561618639201.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "461A8070",
+    "lastKnownWriteTime" : 1561618660,
+    "last_content_update" : 1561618660997,
+    "path" : "~/DataMining/missing.R",
+    "project_path" : "missing.R",
+    "properties" : {
+        "cursorPosition" : "77,16",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

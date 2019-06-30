@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1561611911450.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C66567F9",
+    "lastKnownWriteTime" : 1561684551,
+    "last_content_update" : 1561684551998,
+    "path" : "~/DataMining/proyecto_final.R",
+    "project_path" : "proyecto_final.R",
+    "properties" : {
+        "cursorPosition" : "8,87",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
