@@ -23,8 +23,13 @@ library(VIM)
 missingraf=aggr(data,numbers=T)
 
 
-#SELECCIONAMOS LA DATA
+#4) SELECCIONAMOS LA DATA
 str(data)
+data$Sexo<-NULL
+str(data)
+
+
+
 
 
 
