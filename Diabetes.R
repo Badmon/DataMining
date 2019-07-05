@@ -45,7 +45,6 @@ prp(modelo1, type = 1, extra = 1)
 
 #predecimos en la data de prueba
 predichos1<-predict(modelo1, test, type = "class")
-
 table(predichos1,test$Salida)
 
 library(caret)
