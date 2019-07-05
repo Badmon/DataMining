@@ -28,8 +28,23 @@ str(data)
 data$Sexo<-NULL
 str(data)
 
+muestra<-sample(510,219)
 
+train<-data[-muestra,]
+test<-data[muestra,]
 
+library(rpart)
+modelo1<-rpart(Salida~. , data = data, method = "class")
+modelo1
 
+library(partykit)
+plot(as.party(modelo1))
+prp(modelo1, type = 1, extra = 1)
 
+#predecimos en la data de prueba
+predichos1<-predict(modelo1, test, type = "class")
 
+table(predichos1,test$Salida)
+
+library(caret)
+confusionMatrix(predichos1, test$Salida)
