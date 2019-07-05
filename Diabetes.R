@@ -60,11 +60,5 @@ predichos2<-predict(modelo2, test, type = "class")
 predichos2<-as.factor(predichos2)
 confusionMatrix(predichos2, test$Salida)
 
+
 #############################
-
-
-
-
-  
-
-
