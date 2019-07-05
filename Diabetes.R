@@ -22,13 +22,10 @@ length(a)*100/dim(data)[1]
 library(VIM)
 missingraf=aggr(data,numbers=T)
 
-
-
-
+#TRAIN Y TEST
 data$Sexo<-NULL
 data$Salida<-as.factor(data$Salida)
 str(data)
-
 
 muestra<-sample(510,219)
 train<-data[-muestra,]
@@ -50,7 +47,6 @@ table(predichos1,test$Salida)
 
 library(caret)
 confusionMatrix(predichos11, test$Salida)
-
 
 #REDES NEURONALES
 library(nnet)
