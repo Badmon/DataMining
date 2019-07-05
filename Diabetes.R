@@ -23,18 +23,14 @@ library(VIM)
 missingraf=aggr(data,numbers=T)
 
 
-#4) SELECCIONAMOS LA DATA
-str(data)
+
+
 data$Sexo<-NULL
 data$Salida<-as.factor(data$Salida)
 str(data)
 
 
-
-
-
 muestra<-sample(510,219)
-
 train<-data[-muestra,]
 test<-data[muestra,]
 
@@ -57,16 +53,14 @@ confusionMatrix(predichos11, test$Salida)
 
 
 #REDES NEURONALES
-
 library(nnet)
 modelo2<-nnet(Salida~., train ,size=10, maxit=100, trace=F)
-
 predichos2<-predict(modelo2, test, type = "class")
-
-
 
 predichos2<-as.factor(predichos2)
 confusionMatrix(predichos2, test$Salida)
+
+#############################
 
 
 
