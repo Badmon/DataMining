@@ -3,6 +3,7 @@
 data<-read.csv("https://raw.githubusercontent.com/VictorGuevaraP/Mineria-de-datos/master/E4_FILA_B.csv",sep=";")
 
 #1) COMPRENSIÓN DE LOS DATOS
+table(data$Salida)
 #- SALIDA 0=No 1=Si / Diabetico
 
 #2) EXPLORACION DE LOS DATOS
@@ -26,5 +27,4 @@ missingraf=aggr(data,numbers=T)
 str(data)
 
 
-table(data$Salida)
 
