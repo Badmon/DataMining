@@ -39,6 +39,8 @@ modelo1
 
 library(partykit)
 plot(as.party(modelo1))
+
+library(rpart.plot)
 prp(modelo1, type = 1, extra = 1)
 
 #predecimos en la data de prueba
