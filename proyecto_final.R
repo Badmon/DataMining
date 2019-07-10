@@ -6,7 +6,7 @@ getwd()
 # a) COMPRESIÓN DE LOS DATOS
 
 #CARGAMOS LA DATA
-juegosOlimpicos<-read.csv("C:/Users/user/Documents/DataMining/dataMineria.csv",sep=";")
+juegosOlimpicos<-read.csv("C:/Users/user/Documents/DataMining/DATA/dataMineria.csv",sep=";")
 
 #id=Identificador de los jugadores
 #name=Nombre del jugador
@@ -51,8 +51,13 @@ porcentajeper
 a<-which(rowSums(is.na(juegosOlimpicos))!=0)
 length(a)*100/dim(juegosOlimpicos)[1]
 
+#VALORES FUERA DE RANGO
+boxplot(sqrt(juegosOlimpicos$sport),col="skyblue")
+boxplot(juegosOlimpicos$sport,col="skyblue",main="DIAGRAMA DE CAJA")
 
+plot(juegosOlimpicos,pch=19,col=rainbow(10))
 
+plot(juegosOlimpicos$height,juegosOlimpicos$weight,col="red")
 
 ######
 library(mice)
