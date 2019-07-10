@@ -23,7 +23,7 @@ head(juegosOlimpicos)
 summary(juegosOlimpicos)
 str(juegosOlimpicos)
 
-# c)Verificación de calidad de datosm4
+# c)Verificación de calidad de datos
 str(juegosOlimpicos)
 
 #REDEFINIMOS LAS VARIABLES A UTILIZAR
@@ -50,6 +50,7 @@ porcentajeper
 #Verificamos las filas que tienen valores perdidos
 a<-which(rowSums(is.na(juegosOlimpicos))!=0)
 length(a)*100/dim(juegosOlimpicos)[1]
+
 
 
 
