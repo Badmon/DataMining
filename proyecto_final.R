@@ -59,6 +59,8 @@ plot(juegosOlimpicos,pch=19,col=rainbow(10))
 
 plot(juegosOlimpicos$height,juegosOlimpicos$weight,col="red")
 
+hist(juegosOlimpicos$sport,col=rainbow(10),main="HISTOGRAMA",xlab="Minutos al día",ylab = "Frecuencia")
+
 ######
 library(mice)
 library(VIM)
