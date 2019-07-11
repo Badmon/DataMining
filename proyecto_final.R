@@ -4,6 +4,7 @@ getwd()
 
 #2
 # a) COMPRESIÓN DE LOS DATOS
+table(juegosOlimpicos$sex)
 
 #CARGAMOS LA DATA
 juegosOlimpicos<-read.csv("C:/Users/user/Documents/DataMining/DATA/dataMineria.csv",sep=";")
@@ -43,7 +44,7 @@ str(juegosOlimpicos)
 which(colSums(is.na(juegosOlimpicos))!=0)
 
 #Calculamos valores perdidos por columna
-colperd=c(4,5)
+colperd=c(6,7)
 porcentajeper=100*colSums(is.na(juegosOlimpicos[,colperd]))/dim(juegosOlimpicos)[1]
 porcentajeper
 

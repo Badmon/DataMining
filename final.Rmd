@@ -1,0 +1,112 @@
+---
+title: "CRISP-DM"
+author: "Juan Antonio León"
+date: "11 de julio de 2019"
+output: html_document
+---
+###AVANCE DE PROYECTO FINAL
+
+
+```{r}
+library(ggplot2)
+```
+
+###a) COMPRESIÓN DE LOS DATOS
+####Cargamos la Data
+```{r}
+juegosOlimpicos<-read.csv("C:/Users/user/Documents/DataMining/DATA/dataMineria.csv",sep=";")
+```
+####X 
+```{r}
+names(juegosOlimpicos)
+```
+#####id = Identificador de los jugadores
+#####name = Nombre del jugador
+#####nationality = Nacionalidad del jugador
+#####sex = Sexo del jugador
+#####dob = Fecha de nacimiento
+#####height = Altura
+#####weight = Peso
+#####sport = Deporte
+#####gol,silver,bronze = Medallas
+
+###b)Exploración de los datos
+```{r}
+head(juegosOlimpicos)
+```
+
+```{r}
+summary(juegosOlimpicos)
+```
+
+```{r}
+str(juegosOlimpicos)
+```
+
+```{r}
+target<-table(juegosOlimpicos$sex) 
+barplot(target)
+```
+
+#####Observamos que el 55% de jugadores son hombres y 45% mujeres.
+```{r}
+table(juegosOlimpicos$sex)
+```
+
+```{r}
+ggplot(data=juegosOlimpicos)+
+  geom_bar(mapping=aes(x=gold, color=sex))
+```
+
+```{r}
+ggplot(data=juegosOlimpicos)+
+  geom_bar(mapping=aes(x=silver, color=sex))
+```
+
+```{r}
+ggplot(data=juegosOlimpicos)+
+  geom_bar(mapping=aes(x=bronze, color=sex))
+```
+
+```{r}
+juegosOlimpicos$nationality<-as.numeric(juegosOlimpicos$nationality)
+juegosOlimpicos$sex<-as.factor(juegosOlimpicos$sex)
+
+ggplot(data=juegosOlimpicos)+
+  geom_histogram(mapping=aes(x=nationality, color=sex))
+
+```
+
+###c)Verificación de calidad de datos
+```{r}
+str(juegosOlimpicos)
+```
+
+####Verificamos las columnas que tienen valores perdidos
+```{r}
+which(colSums(is.na(juegosOlimpicos))!=0)
+
+
+```
+
+####Calculamos valores perdidos por columna
+```{r}
+
+colperd=c(6,7)
+porcentajeper=100*colSums(is.na(juegosOlimpicos[,colperd]))/dim(juegosOlimpicos)[1]
+porcentajeper
+```
+
+####Verificamos las filas que tienen valores perdidos
+```{r}
+a<-which(rowSums(is.na(juegosOlimpicos))!=0)
+length(a)*100/dim(juegosOlimpicos)[1]
+```
+
+####Valores fuera de rango
+```{r}
+boxplot(juegosOlimpicos$height,col="skyblue",main="Diagrama de Caja(Altura)")
+boxplot(juegosOlimpicos$weight,col="skyblue",main="Diagrama de Caja(Peso)")
+```
+
+
