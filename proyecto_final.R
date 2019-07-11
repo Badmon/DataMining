@@ -73,4 +73,27 @@ names(juegosOlimpicos)
 library(Amelia)
 missmap(juegosOlimpicos)
 
+#c) construcion de nuevos datos, es el dato limpiado y listo para seguir los procesos
+
+juegosOlimpicosKNN
+
+#d) integrar los datos
+#No ha sido necesaria la creaci?n de nuevas estructuras (campos, registros, etc.), ni la
+#fusi?n entre distintas tablas de la base de datos, ya que el programa Oracle Data Mining
+#se encarga de realizar estas tareas autom?ticamente sin que el usuario tenga que crear
+#nuevas tablas, registros o campos manualmente.
+
+#e) formato de datos
+juegosOlimpicos$nationality<-as.numeric(juegosOlimpicos$nationality)
+juegosOlimpicos$sex<-as.numeric(juegosOlimpicos$sex)
+juegosOlimpicos$sport<-as.numeric(juegosOlimpicos$sport)
+juegosOlimpicos$dob<-as.Date(juegosOlimpicos$dob,"%d/%m/%Y")
+str(juegosOlimpicos)
+
+
+
+
+
+
+
 
