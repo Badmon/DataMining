@@ -43,7 +43,7 @@ str(juegosOlimpicos)
 which(colSums(is.na(juegosOlimpicos))!=0)
 
 #Calculamos valores perdidos por columna
-colperd=c(6,7)
+colperd=c(4,5)
 porcentajeper=100*colSums(is.na(juegosOlimpicos[,colperd]))/dim(juegosOlimpicos)[1]
 porcentajeper
 
@@ -62,7 +62,6 @@ plot(juegosOlimpicos$height,juegosOlimpicos$weight,col="red")
 hist(juegosOlimpicos$sport,col=rainbow(10),main="HISTOGRAMA",xlab="Minutos al día",ylab = "Frecuencia")
 
 ######
-library(mice)
 library(VIM)
 
 missingraf=aggr(juegosOlimpicos,numbers=T)
@@ -91,6 +90,10 @@ juegosOlimpicos$dob<-as.Date(juegosOlimpicos$dob,"%d/%m/%Y")
 str(juegosOlimpicos)
 
 
+
+library(tidyr)
+juegosOlimpicos <- juegosOlimpicos %>% filter(!is.na(juegosOlimpicos$sex))
+  
 
 
 
