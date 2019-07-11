@@ -4,11 +4,13 @@ author: "Juan Antonio León"
 date: "11 de julio de 2019"
 output: html_document
 ---
-###AVANCE DE PROYECTO FINAL
 
 
+####Librerias correspondientes
 ```{r}
 library(ggplot2)
+library(VIM)
+library(Amelia)
 ```
 
 ###a) COMPRESIÓN DE LOS DATOS
@@ -16,11 +18,11 @@ library(ggplot2)
 ```{r}
 juegosOlimpicos<-read.csv("C:/Users/user/Documents/DataMining/DATA/dataMineria.csv",sep=";")
 ```
-####X 
+####Describimos las variables
 ```{r}
 names(juegosOlimpicos)
 ```
-#####id = Identificador de los jugadores
+#####id = Identificador de los jugadores (Cuantitativo)
 #####name = Nombre del jugador
 #####nationality = Nacionalidad del jugador
 #####sex = Sexo del jugador
@@ -48,7 +50,8 @@ target<-table(juegosOlimpicos$sex)
 barplot(target)
 ```
 
-#####Observamos que el 55% de jugadores son hombres y 45% mujeres.
+######Observamos que el 55% de jugadores son hombres y 45% mujeres.
+
 ```{r}
 table(juegosOlimpicos$sex)
 ```
@@ -68,39 +71,27 @@ ggplot(data=juegosOlimpicos)+
   geom_bar(mapping=aes(x=bronze, color=sex))
 ```
 
-```{r}
-juegosOlimpicos$nationality<-as.numeric(juegosOlimpicos$nationality)
-juegosOlimpicos$sex<-as.factor(juegosOlimpicos$sex)
-
-ggplot(data=juegosOlimpicos)+
-  geom_histogram(mapping=aes(x=nationality, color=sex))
-
-```
-
 ###c)Verificación de calidad de datos
 ```{r}
 str(juegosOlimpicos)
 ```
+######Segun las variables que se muestran, podemos observar que la $dbo no nos sirviria asi como el $id
 
-####Verificamos las columnas que tienen valores perdidos
+
+#####Observamos que hay valores NA's
 ```{r}
-which(colSums(is.na(juegosOlimpicos))!=0)
+summary(juegosOlimpicos)
+```
 
+#####Vemos el gráfico de missin
+```{r}
+missingraf=aggr(juegosOlimpicos,numbers=T)
 
 ```
 
-####Calculamos valores perdidos por columna
+#####Mapa de perdida
 ```{r}
-
-colperd=c(6,7)
-porcentajeper=100*colSums(is.na(juegosOlimpicos[,colperd]))/dim(juegosOlimpicos)[1]
-porcentajeper
-```
-
-####Verificamos las filas que tienen valores perdidos
-```{r}
-a<-which(rowSums(is.na(juegosOlimpicos))!=0)
-length(a)*100/dim(juegosOlimpicos)[1]
+missmap(juegosOlimpicos)
 ```
 
 ####Valores fuera de rango
@@ -110,3 +101,46 @@ boxplot(juegosOlimpicos$weight,col="skyblue",main="Diagrama de Caja(Peso)")
 ```
 
 
+##III. Preparación de datos
+###a) Selección de datos
+
+```{r}
+  str(juegosOlimpicos)
+```
+
+#####En nuestro caso no nos ayudaria con nuestro modelo de predicción las variables $id, $name, $dob
+
+```{r}
+
+```
+
+###b) Limpieza de datos
+
+
+###b) Construcción de nuevos datos
+
+#####Redifinimos las variables a utilizar
+
+```{r}
+juegosOlimpicos<-juegosOlimpicos[,3:11]
+juegosOlimpicos$dob<-NULL
+
+juegosOlimpicos$nationality<-as.numeric(juegosOlimpicos$nationality)
+juegosOlimpicos$sex<-as.numeric(juegosOlimpicos$sex)
+juegosOlimpicos$sport<-as.numeric(juegosOlimpicos$sport)
+str(juegosOlimpicos)
+```
+
+###d) Integración de datos
+###e) Formato de datos
+
+
+##IV. Modelamiento
+###a) Descripción de técnicas de modelado
+###b) Generación de un diseño de comprobación (train y test)
+###c) Generación de los modelos
+###d) Evaluación del modelo
+
+##V. Evaluación
+###a) Evaluación de los resultados
+###b)Revisión de los resultados

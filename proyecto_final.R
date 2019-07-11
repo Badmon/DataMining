@@ -32,8 +32,7 @@ juegosOlimpicos<-juegosOlimpicos[,3:11]
 summary(juegosOlimpicos)
 str(juegosOlimpicos)
 
-#TRANSFORMAMOS LA DATA
-juegosOlimpicos$nationality<-as.numeric(juegosOlimpicos$nationality)
+#TRANSFORMAMOS LA DATAjuegosOlimpicos$nationality<-as.numeric(juegosOlimpicos$nationality)
 juegosOlimpicos$sex<-as.numeric(juegosOlimpicos$sex)
 juegosOlimpicos$sport<-as.numeric(juegosOlimpicos$sport)
 juegosOlimpicos$dob<-as.Date(juegosOlimpicos$dob,"%d/%m/%Y")
